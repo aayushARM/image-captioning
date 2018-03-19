@@ -20,10 +20,6 @@ class ModelBuilder:
 
     def build_train_graph(self, conv_feats, sentences, masks):
 
-        # placeholders...
-        # conv_feats = tf.placeholder(dtype=tf.float32, shape=[self.batch_size, self.num_ctx, self.dim_ctx])
-        # sentences = tf.placeholder(dtype=tf.int32, shape=[self.batch_size, self.max_caption_len])
-        # masks = tf.placeholder(dtype=tf.float32, shape=[self.batch_size, self.max_caption_len])
         word_embedding = tf.get_variable(shape=[self.vocab_size, self.dim_embed],
                                          initializer=self.fc_kernel_initializer,
                                          regularizer=self.fc_kernel_regularizer,
@@ -117,6 +113,7 @@ class ModelBuilder:
 
         return total_loss #Total loss of a batch
 
+    #Greedy decoder for inference:
     def build_test_graph(self, conv_feats):
 
         print("Building test model...")

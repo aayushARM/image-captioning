@@ -12,5 +12,3 @@ This project aims at generating novel, natural language captions of input images
 * The image-caption pairs from data set were added to SequenceExample protocol buffers and then written to files with TFRecord file format. This helps in faster, asynchronous reading of data by input pipeline. I will add more information regarding bringing raw data into this format soon.
 
 To Do: Use Beam Search decoder with LSTM instead of Greedy decoder for greater quality captions.
-
-More instructions regarding Training the model and carrying out Inference on any image will be added soon.

@@ -2,7 +2,7 @@
 
 This project aims at generating novel, natural language captions of input images, using a Seq2Seq architecture that uses a CNN as image encoder and an LSTM RNN as a feature decoder. The project is implemented using Tensorflow, and is roughly based on [Show, Attend and Tell: Neural Image Caption Generation with Visual Attention](https://arxiv.org/abs/1502.03044) paper by Kelvin Xu, Jimmy Ba, Ryan Kiros, Kyunghyun Cho, Aaron Courville, Ruslan Salakhutdinov, Richard Zemel and Yoshua Bengio.
 
-## Salient features: ##
+## Overview: ##
 
 * Uses a multi-threaded input pipeline implemented using Tensorflow Queues, producing a fast, steady stream of inputs from multiple TFRecord files(shards), with rigorous shuffling of data for data augmentation.   
 * Uses Google AutoML Project's [NASNet](https://github.com/tensorflow/models/tree/master/research/slim/nets/nasnet) architecture to extract visual features from images. NASNet currently has highest recorded accuracy on ImageNetLSVRC2012 data set.

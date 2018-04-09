@@ -9,6 +9,6 @@ This project aims at generating novel, natural language captions of input images
 * Trained on MS COCO 2017 Training data set. The final pre-processed data consists of 5,87,605 image-caption pairs. The vocabulary used consists of 10,204 words(words occuring >=5 times in MSCOCO captions data).
 * The LSTM RNN is combined with Soft Attention Mechanism, which computes attention weights, applies them to image features, and produces a "context vector", which is fed into LSTM as an additional input along with hidden states. This gives our LSTM more contextual information at every time-step for producing higher quality captions while decoding.
 * Added L2 regularization to all fully-connected layers and applied drop-out ratio of 0.5 on LSTM and FC Layers to prevent over-fitting.
-* The image-caption pairs from data set were added to SequenceExample protocol buffers and then written to files with TFRecord file format. This helps in faster, asynchronous reading of data by input pipeline. I will add more information regarding bringing raw data into this format soon.
+* The image-caption pairs from data set were added to SequenceExample protocol buffers and then written to files with TFRecord file format. This helps in faster, asynchronous reading of data by input pipeline.
 
 To Do: Use Beam Search decoder with LSTM instead of Greedy decoder for greater quality captions.

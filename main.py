@@ -61,7 +61,7 @@ def train():
     lstm_model = ModelBuilder(max_caption_len, n_lstm_units, batch_size, vocab_size)
     batch_loss= lstm_model.build_train_graph(conv_feats, sentences, masks)
 
-    global_step = tf.Variable(140715, trainable=False )#Will be incremeted after every batch is processed
+    global_step = tf.Variable(140715, trainable=False ) #Will be incremeted after every batch is processed
 
     # exponentially decay learning rate by multiplying it with 0.9 after every decay_steps no. of steps
     def decay_function(learning_rate, global_step):
@@ -176,7 +176,7 @@ def eval():
     fp = tf.gfile.Open(gcloud_bucket + 'results_test.json', 'wb')
     json.dump(results, fp)
 
-#For Feezing chkpt weights with GraphDef
+#For Freezing chkpt weights with GraphDef
 def export_frozen_model():
 
     image = tf.placeholder(dtype=tf.uint8, name='processed_image') #First tensor in frozen graph, input.

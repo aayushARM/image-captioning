@@ -21,3 +21,4 @@ To Do: Use Beam Search decoder with LSTM instead of Greedy decoder for greater q
 * [Another Tensorflow implementation](https://github.com/DeepRNN/image_captioning)
 * [The original paper implementation in Theano](https://github.com/kelvinxu/arctic-captions)
 * [Google's implementation of "Show and Tell: A Neural Image Caption Generator"](https://github.com/tensorflow/models/tree/master/research/im2txt)
+* [NASNet Architecture and pre-trained checkpoints](https://github.com/tensorflow/models/tree/master/research/slim/nets/nasnet)

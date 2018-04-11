@@ -12,3 +12,12 @@ This project aims at generating novel, natural language captions of input images
 * The image-caption pairs from data set were added to SequenceExample protocol buffers and then written to files with TFRecord file format. This helps in faster, asynchronous reading of data by input pipeline.
 
 To Do: Use Beam Search decoder with LSTM instead of Greedy decoder for greater quality captions.
+
+### References: ###
+
+* [Show, Attend and Tell: Neural Image Caption Generation with Visual Attention](https://arxiv.org/abs/1502.03044). Kelvin Xu, Jimmy Ba, Ryan Kiros, Kyunghyun Cho, Aaron Courville, Ruslan Salakhutdinov, Richard Zemel, Yoshua Bengio.
+* [Show, Attend and Tell slides](http://www.slideshare.net/eunjileee/show-attend-and-tell-neural-image-caption-generation-with-visual-attention)
+* [Attention Mechanism Blog Post](https://blog.heuritech.com/2016/01/20/attention-mechanism/)
+* [Another Tensorflow implementation](https://github.com/DeepRNN/image_captioning)
+* [The original paper implementation in Theano](https://github.com/kelvinxu/arctic-captions)
+* [Google's implementation of "Show and Tell: A Neural Image Caption Generator"](https://github.com/tensorflow/models/tree/master/research/im2txt)

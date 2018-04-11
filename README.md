@@ -1,6 +1,6 @@
 # Image Captioning using Neural Networks and Visual Attention
 
-This project aims at generating novel, natural language captions of input images, using a Seq2Seq architecture that uses a CNN as image encoder and an LSTM RNN as a feature decoder. The project is implemented using Tensorflow, and is roughly based on [Show, Attend and Tell: Neural Image Caption Generation with Visual Attention](https://arxiv.org/abs/1502.03044) paper by Kelvin Xu, Jimmy Ba, Ryan Kiros, Kyunghyun Cho, Aaron Courville, Ruslan Salakhutdinov, Richard Zemel and Yoshua Bengio. All the code has been thoroughly commented on for ease of understanding.
+This project aims at generating novel, natural language captions of input images, using a Seq2Seq architecture that uses a CNN as image encoder and an LSTM RNN as a feature decoder. The project is implemented using Tensorflow, and is roughly based on [Show, Attend and Tell: Neural Image Caption Generation with Visual Attention](https://arxiv.org/abs/1502.03044) paper by Kelvin Xu et al. All the code has been thoroughly commented on for ease of understanding.
 
 ## Overview: ##
 

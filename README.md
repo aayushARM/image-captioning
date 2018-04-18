@@ -18,6 +18,7 @@ To Do: Use Beam Search decoder with LSTM instead of Greedy decoder for greater q
 * [Show, Attend and Tell: Neural Image Caption Generation with Visual Attention](https://arxiv.org/abs/1502.03044). Kelvin Xu, Jimmy Ba, Ryan Kiros, Kyunghyun Cho, Aaron Courville, Ruslan Salakhutdinov, Richard Zemel, Yoshua Bengio.
 * [Show, Attend and Tell slides](http://www.slideshare.net/eunjileee/show-attend-and-tell-neural-image-caption-generation-with-visual-attention)
 * [Attention Mechanism Blog Post](https://blog.heuritech.com/2016/01/20/attention-mechanism/)
+* [Interpreting, Training, and Distilling Seq2Seq Models, Alexander Rush (@harvardnlp)](http://www.github.com/harvardnlp/seq2seq-talk/)
 * [The original paper implementation in Theano](https://github.com/kelvinxu/arctic-captions)
 * [NASNet Architecture and pre-trained checkpoints](https://github.com/tensorflow/models/tree/master/research/slim/nets/nasnet)
 * [Google's implementation of "Show and Tell: A Neural Image Caption Generator"](https://github.com/tensorflow/models/tree/master/research/im2txt)

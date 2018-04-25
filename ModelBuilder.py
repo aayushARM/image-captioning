@@ -12,7 +12,7 @@ class ModelBuilder:
         self.max_caption_len = max_caption_len
         self.batch_size = batch_size
         self.vocab_size = vocab_size
-        self.lstm_keep_prob = 0.65
+        self.lstm_keep_prob = 0.5
         self.attention_loss_contrib = 0.01 # determines how much will attention_loss contribute to total loss,
                                            # paper uses 0.01
         #create initializer and regularizer to be used in all the dense layers
@@ -194,7 +194,6 @@ class ModelBuilder:
 
         captions = tf.transpose(predictions)
         return captions
-
 
     def attend(self, conv_feats, last_hidden_state, is_train):
 

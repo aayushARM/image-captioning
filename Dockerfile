@@ -1,4 +1,4 @@
-FROM gcr.io/tensorflow/tensorflow:1.6.0
+FROM gcr.io/tensorflow/tensorflow:1.6.0-py3
 
 RUN pip uninstall -y jupyter 
 ADD . ./

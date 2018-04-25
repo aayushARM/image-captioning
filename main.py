@@ -61,7 +61,7 @@ def train():
     lstm_model = ModelBuilder(max_caption_len, n_lstm_units, batch_size, vocab_size)
     batch_loss= lstm_model.build_train_graph(conv_feats, sentences, masks)
 
-    global_step = tf.Variable(140715, trainable=False ) #Will be incremeted after every batch is processed
+    global_step = tf.Variable(140715, trainable=False )#Will be incremeted after every batch is processed
 
     # exponentially decay learning rate by multiplying it with 0.9 after every decay_steps no. of steps
     def decay_function(learning_rate, global_step):
@@ -106,7 +106,7 @@ def train():
 #For generating caps for test images
 def eval():
     #file_names = tf.gfile.Glob(gcloud_bucket+'val2017/*')
-    file_names = tf.gfile.Glob(gcloud_bucket + 'test2017/*')
+    file_names = tf.gfile.Glob(gcloud_bucket + 'val2014/*')
     num_images = len(file_names)
     batch_size = 166
     num_batches = int(num_images / batch_size)
@@ -164,8 +164,11 @@ def eval():
             #explicitly add a period if not present
             if caption[-1] != '.':
                 caption += ' .'
+
             #small hack to find image id from path:
-            img_id = img_path[45: 57].decode("utf-8") #decode to avoid binary string
+            #img_id = img_path[45: 57].decode("utf-8") #decode to avoid binary string
+
+            img_id = img_path[57: 69].decode("utf-8")  # decode to avoid binary string
             img_id = int(img_id.lstrip('0'))
 
             results.append({'image_id': img_id,
@@ -173,10 +176,10 @@ def eval():
         print(str((i+1)*batch_size) + '/40670 images processed.')
 
     print('All images processed.')
-    fp = tf.gfile.Open(gcloud_bucket + 'results_test.json', 'wb')
+    fp = tf.gfile.Open(gcloud_bucket + 'results_val_2014.json', 'wb')
     json.dump(results, fp)
 
-#For Freezing chkpt weights with GraphDef
+#For Feezing chkpt weights with GraphDef
 def export_frozen_model():
 
     image = tf.placeholder(dtype=tf.uint8, name='processed_image') #First tensor in frozen graph, input.

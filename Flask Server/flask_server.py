@@ -2,7 +2,7 @@
 import tensorflow as tf
 import numpy as np
 import flask
-from flask import request, jsonify
+from flask import request, jsonify, render_template
 import time
 from io import BytesIO
 from tensorflow.python.lib.io import file_io
@@ -48,7 +48,7 @@ int_caption = graph.get_tensor_by_name('import/int_caption:0')
 sess= tf.InteractiveSession()
 print('Flask server started.')
 
-# route all request to '/' to this method
+# route all requests to '/', to this method
 @app.route('/', methods=['POST','GET'])
 def run_inference():
     if request.method == 'POST':
@@ -91,34 +91,18 @@ def run_inference():
                 caption += word
                 break
 
-        # explicitly add period if not present
+        # explicitly add a period if not present
         if caption[-1] != '.':
             caption += ' .'
         print('Done. Request took {:.2f}s'.format(time.time() - start_time))
 
+        caption = {'caption': caption}
         return jsonify(caption)
 
     # When called from a Browser(GET), an interface to upload images will be returned...
     else:
-        return '''
-            <!doctype html>
-            <html lang="en">
-            <head>
-            <title>Image Caption Generator</title>
-            </head>
-            <body>
-            <h2 style="color:black">Image Caption Generator</h4>
-            <div style="margin-top:3%">
-                <h4 style="color:black">Upload an image to generate captions for:</h4>
-                <form method=post enctype=multipart/form-data>
-                    <p><input type=file name=file>
-                    <input type=submit style="color:black;" value=Upload>
-                </form>
-            </div>
-            </body>
-            </html>
-            '''
+        return render_template('cap_gen.html')
 
 if __name__ == '__main__':
     # When run on 0.0.0.0, Flask automatically maps public IP of machine to current app
-    app.run(host="0.0.0.0", port=int("5000"), debug=True, use_reloader=False)
+    app.run(host="0.0.0.0", port=int("8080"), debug=True, use_reloader=False)

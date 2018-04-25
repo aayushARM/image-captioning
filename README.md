@@ -27,7 +27,7 @@ The model achieves following scores on COCO 2014 Validation and Test data:
 * Rogue-L: __51.29__
 * CIDEr: __84.81__
 
-The captions generated for the COCO test and validation images are usually relevant to the images. An Android application was also developed that sends the images to the online Flask server, which runs the frozen inference graph and returns the captions to the client. Below are the examples of captions generated using the Android application on some random images that weren't a part of the MS COCO data set:
+The captions generated for the COCO test and validation images are usually relevant to the images. An [Android application](https://github.com/aayushARM/caption-generator) was also developed that sends the images to the online Flask server, which runs the frozen inference graph and returns the captions to the client. Below are the examples of captions generated using the Android application on some random images that weren't a part of the MS COCO data set:
 
 ![picture alt](https://github.com/aayushARM/image-captioning/blob/master/assets/1.jpeg)
 ![picture alt](https://github.com/aayushARM/image-captioning/blob/master/assets/3.jpeg)

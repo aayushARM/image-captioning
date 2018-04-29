@@ -9,7 +9,7 @@ This project aims at generating novel, natural language captions of input images
 
 * Uses a multi-threaded input pipeline implemented using Tensorflow Queues, producing a fast, steady stream of inputs from multiple TFRecord files(shards), with rigorous shuffling of data for data augmentation.   
 * Uses Google AutoML Project's [NASNet](https://github.com/tensorflow/models/tree/master/research/slim/nets/nasnet) architecture to extract visual features from images. NASNet currently has highest recorded accuracy on ImageNetLSVRC2012 data set.
-* Trained on MS COCO 2017 Training data set. The final pre-processed data consists of 5,87,605 image-caption pairs. The vocabulary used consists of 10,204 words(words occuring >=5 times in MSCOCO captions data).
+* Trained on [MS COCO](http://cocodataset.org/#home) 2017 Training data set. The final pre-processed data consists of 5,87,605 image-caption pairs. The vocabulary used consists of 10,204 words(words occuring >=5 times in MSCOCO captions data).
 * The LSTM RNN is combined with Soft Attention Mechanism, which computes attention weights, applies them to image features, and produces a "context vector", which is fed into LSTM as an additional input along with hidden states. This gives our LSTM more contextual information at every time-step for producing higher quality captions while decoding.
 * Added L2 regularization to all fully-connected layers and applied drop-out ratio of 0.5 on LSTM and FC Layers to prevent over-fitting.
 * The image-caption pairs from data set were added to SequenceExample protocol buffers and then written to files with TFRecord file format. This helps in faster, asynchronous reading of data by input pipeline.
@@ -27,7 +27,7 @@ The model achieves following scores on COCO 2014 Validation and Test data:
 * Rogue-L: __51.29__
 * CIDEr: __84.81__
 
-The captions generated for the COCO test and validation images are usually relevant to the images. An [Android application](https://github.com/aayushARM/caption-generator) was also developed that sends the images to the online Flask server, which runs the frozen inference graph and returns the captions to the client. Below are the examples of captions generated using the Android application on some random images that weren't a part of the MS COCO data set:
+An [Android application](https://github.com/aayushARM/caption-generator) was also developed that sends the images to the online Flask server, which runs the frozen inference graph and returns the captions to the client. The captions generated for the COCO test and validation images are usually relevant to the images. However, I wanted to know how it performs on random images that are NOT a part of the MS COCO test and validation data set. Below are the examples of captions generated using the Android application on some such images:
 
 ![picture alt](https://github.com/aayushARM/image-captioning/blob/master/assets/1.jpeg)
 ![picture alt](https://github.com/aayushARM/image-captioning/blob/master/assets/3.jpeg)

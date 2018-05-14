@@ -49,6 +49,5 @@ An [Android application](https://github.com/aayushARM/caption-generator) was als
 * [Attention Mechanism Blog Post](https://blog.heuritech.com/2016/01/20/attention-mechanism/)
 * [Interpreting, Training, and Distilling Seq2Seq Models, Alexander Rush (@harvardnlp)](http://www.github.com/harvardnlp/seq2seq-talk/)
 * [The original paper implementation in Theano](https://github.com/kelvinxu/arctic-captions)
-* [Another Tensorflow implementation](https://github.com/DeepRNN/image_captioning)
 * [NASNet Architecture and pre-trained checkpoints](https://github.com/tensorflow/models/tree/master/research/slim/nets/nasnet)
 * [Google's implementation of "Show and Tell: A Neural Image Caption Generator"](https://github.com/tensorflow/models/tree/master/research/im2txt)

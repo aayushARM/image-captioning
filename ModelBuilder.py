@@ -13,8 +13,8 @@ class ModelBuilder:
         self.batch_size = batch_size
         self.vocab_size = vocab_size
         self.lstm_keep_prob = 0.5
-        self.attention_loss_contrib = 0.01 # determines how much will attention_loss contribute to total loss,
-                                           # paper uses 0.01
+        self.attention_loss_contrib = 0.01 # determines how much will attention_loss contribute to total loss
+        
         #create initializer and regularizer to be used in all the dense layers
         self.fc_kernel_initializer = tf.random_uniform_initializer(minval= -0.08,
                                                                     maxval= 0.08)
@@ -73,7 +73,6 @@ class ModelBuilder:
             # Run LSTM step
             with tf.variable_scope("lstm"):
                 #because LSTMCell only has two argumnets, the 3rd input(Z) has to be concatenated with word_embed.
-                #Results produced will be same as all inputs are internally concatenated anyway.
                 current_input = tf.concat([Z, word_embed], 1)
                 output, current_state_tuple = lstm(current_input, last_state_tuple)
 
@@ -200,7 +199,6 @@ class ModelBuilder:
         reshaped_conv_feats = tf.reshape(conv_feats, [-1, self.channels])
         reshaped_conv_feats = tf.layers.dropout(reshaped_conv_feats, training=is_train)
         last_hidden_state = tf.layers.dropout(last_hidden_state, training=is_train)
-        #Use 2 FC layers in succession to attend
         if(is_train):
             logits1 = tf.layers.dense(
                 inputs=reshaped_conv_feats,

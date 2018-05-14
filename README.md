@@ -48,6 +48,6 @@ An [Android application](https://github.com/aayushARM/caption-generator) was als
 * [Show, Attend and Tell slides](http://www.slideshare.net/eunjileee/show-attend-and-tell-neural-image-caption-generation-with-visual-attention)
 * [Attention Mechanism Blog Post](https://blog.heuritech.com/2016/01/20/attention-mechanism/)
 * [Interpreting, Training, and Distilling Seq2Seq Models, Alexander Rush (@harvardnlp)](http://www.github.com/harvardnlp/seq2seq-talk/)
-* [The original paper implementation in Theano](https://github.com/kelvinxu/arctic-captions)
 * [NASNet Architecture and pre-trained checkpoints](https://github.com/tensorflow/models/tree/master/research/slim/nets/nasnet)
+* [The original paper implementation in Theano](https://github.com/kelvinxu/arctic-captions)
 * [Google's implementation of "Show and Tell: A Neural Image Caption Generator"](https://github.com/tensorflow/models/tree/master/research/im2txt)

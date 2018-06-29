@@ -10,7 +10,7 @@ import urllib.request as req
 import shutil
 
 app = flask.Flask(__name__)
-gcs_public_data = 'https://storage.googleapis.com/image-captioning-196706-bucket/data/'
+gcs_public_data = 'link'
 graph_file = 'frozen_final_graph.pb'
 dict_file = 'idx_to_word.npy'
 

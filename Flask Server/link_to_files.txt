@@ -1,0 +1,2 @@
+The frozen_final_graph.pb and the idx_to_word.npy dict can be downloaded from below link:
+https://drive.google.com/file/d/1youuMSwn_DMFCRusclehEc5VmJCa0sQy/view?usp=sharing
